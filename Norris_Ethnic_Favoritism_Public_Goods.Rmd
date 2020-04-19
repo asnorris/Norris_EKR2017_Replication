@@ -5,10 +5,21 @@ date: "4/14/2020"
 output:
   pdf_document: default
   html_document: default
+  
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tinytex)
+library(knitr)
+library(kableExtra)
+library(latexpdf)
+library(readtext)
+library(utils)
+
+# need to load latex package "dcolumn" to allow latex tables to run
+
+usepackage_latex("dcolumn")
 
 ```
 
@@ -24,4 +35,24 @@ The paper by Ejdemyr et al. (2017) explores the issues of public goods provision
 ## Lit Review
 
 This section of the paper is a literature reveiw of academic literature that is related to the subject matter of my replication.  The literature review in the original paper (Ejdemyr et al. 2017) contains many references to papers that are related to the research question and findings.
+
+
+```{r}
+
+include_graphics("Replication/figures/did_boreholes.pdf")
+```
+
+
+```{r}
+usepackage_latex("dcolumn")
+
+```
+
+
+\input{Replication/tables/ea_did_a.tex}
+
+
+
+
+
 
