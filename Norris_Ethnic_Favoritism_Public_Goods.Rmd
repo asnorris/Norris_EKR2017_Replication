@@ -9,6 +9,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
+
 knitr::opts_chunk$set(echo = TRUE)
 library(tinytex)
 library(knitr)
@@ -25,6 +26,8 @@ usepackage_latex("dcolumn")
 
 ## Abstract
 
+Ejdemyr et al. (2017) in their paper "Segregation, Ethnic Favoritism, and the Strategic Targeting of Local Public Goods" find that segregation plays a role in public goods provision.  They argue that ethnic favoritism cannot effectively be used unless there is significant segregation as to allow for effective targetting.  Ejdemyr et al. use data from 
+
 This paper is a replication of the research conducted by Ejdemyr et al. (2017): "Segregation, Ethnic Favoritism, and the Strategic Targeting of Local Public Goods".  In this replication, I replicate the research using the code provided by the researchers and conduct an extension with the data to learn more about the issue. After assessing my own findings from the replication, I will conclude whether I think the results of the original paper seem like they make sense.
 
 
@@ -37,20 +40,34 @@ The paper by Ejdemyr et al. (2017) explores the issues of public goods provision
 This section of the paper is a literature reveiw of academic literature that is related to the subject matter of my replication.  The literature review in the original paper (Ejdemyr et al. 2017) contains many references to papers that are related to the research question and findings.
 
 
-```{r}
 
-include_graphics("Replication/figures/did_boreholes.pdf")
+
+
+
+
+
+## Figure 1
+```{r figure 1}
+
+include_graphics("Replication/figures/stylized_seg.pdf")
+
 ```
 
+## Table 1
+\input{Replication/tables/ed_boreholes_rural.tex}
 
-```{r}
-usepackage_latex("dcolumn")
-
-```
-
-
+## Table 2
 \input{Replication/tables/ea_did_a.tex}
 
+## Table 3
+\input{Replication/tables/ea_did_b.tex}
+
+## Figure 3
+```{r figure 3}
+
+include_graphics("Replication/figures/did_boreholes.pdf")
+
+```
 
 
 
