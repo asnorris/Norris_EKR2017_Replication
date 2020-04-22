@@ -1,0 +1,41 @@
+Replication files for Ejdemyr, Kramon, Robinson (2017): Segregation, Ethnic
+Favoritism, and the Strategic Targeting of Local Public Goods
+
+DATA
+
+elecdist.csv:       Electoral district dataset (193 observations)
+locality.csv:       Locality dataset (12380 observations)
+locality-panel.csv: Locality-by-period dataset (24760 observations)
+
+
+CODEBOOKS
+
+elecdist_codebook.csv: variable names and descriptions for elecdist.csv
+locality_codebook.csv: variable names and descriptions for locality.csv
+locality-panel_codebook.csv: variable names, types, and descriptions for locality-panel.csv
+
+
+SCRIPTS
+
+stylized-seg.R
+   Produces: Figure 1
+   Data: None
+
+elecdist-main.R
+   Produces: Table 1 and simulations for expected values and CIs
+   Data: elecdist.csv
+
+locality-main.R
+   Produces: Figure 3 and Table 2
+   Data: locality-panel.csv
+
+elecdist-appendix.R
+   Produces: Tables and figures for appendix (electoral district level)
+   Data: elecdist.csv
+
+locality-appendix.R
+   Produces: Tables and figures for appendix (locality level)
+   Data: locality-panel.csv and locality.csv
+
+functions.R
+   A set of custom functions used for the analyses
