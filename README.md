@@ -3,6 +3,8 @@
 In this replication I use the data and code form Ejdemyr, Kramon, Robinson (2017): Segregation, Ethnic
 Favoritism, and the Strategic Targeting of Local Public Goods.  
 
+I'd like to thank the authors for making their code available to the public.
+
 The authors' code can be found in the Replication folder. All of the code files have comments from the authors.  I denote my own personal comments with ## as to not confuse people or take credit for their work.
 
   The folder includes:
@@ -28,4 +30,4 @@ The authors' code can be found in the Replication folder. All of the code files 
     
 My figures for the extension can be created by running the file extension.Rmd.  This file uses the code from locality-main.R but uses different dependent variables.
 
-My replication paper can be created by running the above files and then running the final file: Norris_Ethnic_Favoritism_Public_Goods.Rmd
+My replication paper can be created by running the above files and then running the final file: Norris_Replication_Paper.Rmd
