@@ -11,6 +11,7 @@ library(seg)
 library(splancs)
 library(tidyverse)
 
+## This creates the dimensions of the hypothetical electoral districts
 # Set dimensions of grid, cell size, and number of localities
 grid.dim <- c(4, 4)
 cell.size <- 1

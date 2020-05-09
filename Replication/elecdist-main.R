@@ -4,6 +4,7 @@
 # ejdemyr@gmail.com. The script works as of R version 3.4.0 (2017-04-21).
 
 # Load packages
+## Comment out package 'Hmisc' because it won't run
 library(stargazer)
 # library(Hmisc)
 library(sandwich)
@@ -21,6 +22,9 @@ ed <- ed %>% mutate(admdistrict = factor(admdistrict))
 # Set reference category for fixed effect to Chikwawa (~median intercept)
 ed$admdistrict <- relevel(ed$admdistrict, ref = "Chikwawa")
 
+## Create Table 1. Table 1 is the regression output of regressing a number of
+## variables including segregation against the change in the number of boreholes
+## between 1998 and 2008 
 
 # Table 1 -------------
 f1 <- formula(cqborehole ~ seg + elf_ed + I(log(popden)) + I(log(urbanprop + 0.001)) +
@@ -73,6 +77,8 @@ stargazer(mods1[1], mods2[1], mods1[2], mods2[2],
           no.space = TRUE,
           out = "Replication/tables/ed_boreholes.tex")
 
+
+## Simulate the data to find confidence intervals
 
 # Simulations of expected values and confidence intervals -------------
 set.seed(222)

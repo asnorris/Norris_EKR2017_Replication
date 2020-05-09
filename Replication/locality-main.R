@@ -4,6 +4,7 @@
 # ejdemyr@gmail.com. The script works as of R version 3.4.0 (2017-04-21).
 
 # Load packages
+## Comment out package 'Hmisc' because it won't run
 library(stargazer)
 # library(Hmisc)
 library(sandwich)
@@ -58,6 +59,7 @@ with(e_change %>% filter(ch > 1), prop.table(table(ch)))
 # What % had at least one borehole in 1998?
 with(e_sub %>% filter(period == "1994-1999"), prop.table(table(qb == 1)))
 
+## Create Figure 3, the three panel difference in differences model
 
 # Figure 3 -------------
 plot_dta <- e_sub %>%
@@ -70,6 +72,8 @@ plot_dta
 
 x <- c(1, 2)
 plot_dta <- plot_dta[, 3:4]
+
+##Create and format the three panel difference in differences graph
 
 pdf("Replication/figures/did_boreholes.pdf", width=7, height=4)
 par(mfrow=c(1,3))
@@ -99,7 +103,7 @@ plot(x, plot_dta[5,], pch=19, xlim=c(.5,2.5), ylim=c(0, 0.55), las=1, cex=1.5, x
 	axis(1, at=x, labels=c("1998", "2008"))
 dev.off()
 
-
+## this table is the output of a dif-in-dif model
 # Table 2, Panel A -------------
 
 # Across three levels of segregation
@@ -173,6 +177,7 @@ stargazer(mods,
           no.space = TRUE,
           out = "Replication/tables/ea_did_a.tex")
 
+## This panel is not used in the paper
 
 # Table 2, Panel B -------------
 m1 <- felm(qb ~ T + matchshare | eacode | 0 | eacode, data = e_sub, subset = seg3 == "low")
