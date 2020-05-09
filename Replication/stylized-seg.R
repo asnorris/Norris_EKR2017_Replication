@@ -11,16 +11,10 @@ library(seg)
 library(splancs)
 library(tidyverse)
 
-##Figure 1 is the grid in which different electoral districts, their demographics, and the distance from the public good are shown
-
-##The grids include 16 municipalities, hence the 4x4 design
-
 # Set dimensions of grid, cell size, and number of localities
 grid.dim <- c(4, 4)
 cell.size <- 1
 no.loc <- grid.dim[1] * grid.dim[2]
-
-##Now that the dimensions are set, we can generate the grid
 
 # Generate grid
 grd <- GridTopology(c(0, 0), c(cell.size, cell.size), grid.dim)
@@ -82,8 +76,6 @@ theme <- theme_bw() + theme(
 )
 
 # Plot
-
-## These plots are grids showing the ethnicities of each 
 dta.list <- list(dta.seg, dta.cb)
 
 plots <- lapply(dta.list, function(dta) {

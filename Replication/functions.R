@@ -1,11 +1,5 @@
 # functions.R: A set of custom functions used for the analyses.
 
-## I had to add this in order to make the themes function work below
-
-library(ggplot2)
-
-## This code chunk creates the regression models that we need to use to look for causality
-
 # Function that takes a df, formula, seg variable, and elf cutoff
 # and returns a glm (quasi-poisson) object
 ed_mod <- function(df, formula, seg, elfco) {
@@ -14,8 +8,6 @@ ed_mod <- function(df, formula, seg, elfco) {
   mod <- glm(formula, data = df, family = "quasipoisson")
   return(mod)
 }
-
-## This code chunk takes the model created by the function above and creates a matrix with the standard errors
 
 # Function that takes a GLM model and returns (clustered) standard errors or
 # the full variance-covariance matrix
@@ -47,8 +39,6 @@ ed_se <- function(mod, clustvar = "admdistrict", output = "clustse") {
   return(result)
 }
 
-## create a function to look at the differences of first differences and predicted values.
-
 # Simulating first differences or predicted values
 ed_sim <- function(m, model, vcov, xset_low, xset_high, type = "first-dif") {
   betas <- MASS::mvrnorm(n = m, mu = coef(model), Sigma = vcov)
@@ -70,8 +60,6 @@ ed_sim <- function(m, model, vcov, xset_low, xset_high, type = "first-dif") {
 
   return(c("mean" = mean(pred), quantile(pred, sigquant)))
 }
-
-## Create a graph theme, basically specifying color and size
 
 # A graphing theme for ggplot
 theme_smpl <- theme(

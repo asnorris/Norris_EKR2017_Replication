@@ -5,15 +5,15 @@
 
 # Load packages
 library(stargazer)
-library(Hmisc)
+# library(Hmisc)
 library(sandwich)
 library(tidyverse)
 library(lfe)
 
 # Load custom functions for analyses
-source("functions.R")
+source("Replication/functions.R")
 
-e <- read_csv("locality-panel.csv")
+e <- read_csv("Replication/locality-panel.csv")
 
 # Add a dummy for second period and treated in second period; clean segregation
 # dummies; add per capita measures; and add year for which public good was
@@ -71,7 +71,7 @@ plot_dta
 x <- c(1, 2)
 plot_dta <- plot_dta[, 3:4]
 
-pdf("figures/did_boreholes.pdf", width=7, height=4)
+pdf("Replication/figures/did_boreholes.pdf", width=7, height=4)
 par(mfrow=c(1,3))
 plot(x, plot_dta[1,],
      pch=19, xlim=c(.5,2.5), ylim=c(0, 0.55), las=1, cex=1.5, xaxt="n",
@@ -171,7 +171,7 @@ stargazer(mods,
           notes.align = "l",
           notes.label = "",
           no.space = TRUE,
-          out = "tables/ea_did_a.tex")
+          out = "Replication/tables/ea_did_a.tex")
 
 
 # Table 2, Panel B -------------
@@ -244,4 +244,4 @@ stargazer(mods,
           notes.align = "l",
           notes.label = "",
           no.space = TRUE,
-          out = "tables/ea_did_b.tex")
+          out = "Replication/tables/ea_did_b.tex")
